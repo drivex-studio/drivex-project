@@ -4580,7 +4580,7 @@ body[data-transition-phase=exiting] .page-enter-fade {
 
 @font-face {
   font-family: geistMono;
-  src: url(../../public/fonts/GeistMono[wght].woff2) format("woff2");
+  src: url(/fonts/GeistMono[wght].woff2) format("woff2");
   font-display: swap;
   font-weight: 400;
   font-style: normal
@@ -4588,7 +4588,7 @@ body[data-transition-phase=exiting] .page-enter-fade {
 
 @font-face {
   font-family: geistMono;
-  src: url(./fonts/GeistMono-Medium.woff2)format("woff2");
+  src: url(/fonts/GeistMono-Medium.woff2)format("woff2");
   font-display: swap;
   font-weight: 500;
   font-style: normal
@@ -4604,7 +4604,7 @@ body[data-transition-phase=exiting] .page-enter-fade {
 }
 @font-face {
   font-family: "AktivGrotesk";
-  src: url(./fonts/AktivGroteskCorp-Regular.woff2) format("woff2");
+  src: url(/fonts/AktivGroteskCorp-Regular.woff2) format("woff2");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
