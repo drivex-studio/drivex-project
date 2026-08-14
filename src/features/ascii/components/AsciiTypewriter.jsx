@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { cx } from "clsx";
+import { cx } from "@lib/vendor";
 import { ASCII_ANIMATION_DURATION } from "@shared/constants/constants";
 import { AsciiCanvas } from "@features/ascii/components/AsciiCanvas";
 import { computeContentBounds } from "@features/ascii/utils/computeContentBounds";
