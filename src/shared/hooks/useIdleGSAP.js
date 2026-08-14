@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react';
 import { usePageTransition } from '@shared/hooks/usePageTransition';
 
 
-export default function useIdleGSAP(callback, config) {
+export function useIdleGSAP(callback, config) {
   const { phase } = usePageTransition();
   const [isIdle, setIsIdle] = useState(phase === "idle");
 
@@ -33,3 +33,5 @@ export default function useIdleGSAP(callback, config) {
 
   return useGSAP(wrappedCallback, gsapConfig);
 }
+
+export default useIdleGSAP;
