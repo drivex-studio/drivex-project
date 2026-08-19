@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-// TODO: source not present in bundle
+
 import { cva, cx } fromfrom '@lib/vendor';
 
 export const inputVariants = cva({

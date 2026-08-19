@@ -1,7 +1,8 @@
+"use client";
 import React from 'react';
 import dynamic from 'next/dynamic';
 const CustomCursor = dynamic(
-  () => import('../ui/CustomCursor').then((mod) => mod.CustomCursor),
+  () => import('@components/ui/CustomCursor').then((mod) => mod.CustomCursor),
   { ssr: false }
 );
 

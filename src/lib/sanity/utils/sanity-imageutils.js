@@ -1,14 +1,10 @@
-import { createImageUrlBuilder } from "next-sanity";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { env } from 'env';
-
 import {
   DEFAULT_MAX_WIDTH,
   DEFAULT_MAX_HEIGHT,
   DEFAULT_SOURCE_WIDTHS,
 } from '@shared/constants/constants';
-
-
-
 import { run } from '@lib/sanity/utils/run';
 
 

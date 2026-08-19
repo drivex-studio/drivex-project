@@ -2,8 +2,7 @@
 
 import { useRef, useState, useActionState, startTransition, useEffect } from 'react';
 import { createServerReference, callServer, findSourceMapURL } from 'react-server-dom-webpack/client';
-
-import { cx } from '@lib/cendor';
+import { cx } from '@lib/vendor';
 import { useSpamPrevention } from '@features/newsletters/hooks/useSpamPrevention';
 import { FormHoneypot } from '@features/newsletters/forms/FormHoneypot';
 import { AnimatedButton } from '@features/animations/components/AnimatedButton';
@@ -16,7 +15,6 @@ const subscribeToNewsletterAction = createServerReference(
   findSourceMapURL,
   "subscribeToNewsletter"
 );
-
 
 export function NewsletterForm({
   heading,

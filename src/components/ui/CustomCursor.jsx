@@ -2,12 +2,9 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { usePageTransitionContext } from '@providers/PageTransitionProvider';
-import { cx } from '@lib/vendor';
+import { gsap, useGSAP, cx } from '@lib/vendor';
 
-gsap.registerPlugin(useGSAP);
 
 export default function CustomCursor({
   children,
@@ -329,3 +326,5 @@ export default function CustomCursor({
     </>
   );
 }
+
+export { CustomCursor };
