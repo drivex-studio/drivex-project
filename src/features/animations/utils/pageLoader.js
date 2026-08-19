@@ -5,7 +5,7 @@ import { gsap, useGSAP, cx } from '@lib/vendor';
 import { usePreloader } from '@providers/PreloaderProvider';
 import ScrambleText from '@features/animations/components/ScrambleText';
 
-export default function Preloader() {
+export function Preloader() {
   const { phase, setPhase, isInitialLoad } = usePreloader();
 
   const containerRef = useRef(null);

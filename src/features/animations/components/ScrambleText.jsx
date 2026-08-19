@@ -37,7 +37,6 @@ export function ScrambleText({
 
   const scrambleGroup = useScrambleGroup();
 
-  // Normalize children to string
   let childText;
   if (typeof children === "string") {
     childText = children;
@@ -47,7 +46,6 @@ export function ScrambleText({
     childText = "";
   }
 
-  // Sync internal text ref with children changes
   useEffect(() => {
     internalTextRef.current = childText;
   }, [childText]);

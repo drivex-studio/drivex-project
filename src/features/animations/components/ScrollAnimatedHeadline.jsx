@@ -1,4 +1,4 @@
-import { AnimatedHeadline } from "@animations/components/ScrollAnimatedHeadline";
+import { AnimatedHeadline } from "@features/animations/components/AnimatedHeadline";   
 
 import { cx } from '@lib/vendor';
 
