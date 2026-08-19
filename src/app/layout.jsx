@@ -1,5 +1,6 @@
 import { AppProviders } from '@app/providers';
 import '../styles/app.css';
+import App from 'components/app';
 
 export default function RootLayout({ children }) {
   return (

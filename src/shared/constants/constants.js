@@ -8,3 +8,5 @@ export const ASCII_COLOR_DELAY = 0.15;
 export const ASCII_EASE = "power3.out";
 export const ASCII_GSAP_DURATION = 3.5;
 export const ASCII_REVEAL_DURATION = 3.5;
+
+export const defaultChars = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";

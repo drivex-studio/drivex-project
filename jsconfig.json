@@ -18,7 +18,9 @@
       "@shared/*": ["./src/shared/*"],
       "@lib/*": ["./src/lib/*"],
       "@utils/*": ["./src/shared/utils/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@animations": ["./src/features/animations/*"]
+      
     }
   },
   "include": [

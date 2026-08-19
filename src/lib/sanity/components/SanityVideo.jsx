@@ -5,6 +5,7 @@ import { cx } from '@lib/vendor';// derived path for 801335
 import { createResponsiveRatios } from '@lib/sanity/utils/responsive';
 import { run } from '@lib/sanity/utils/run';
 import { DEFAULT_MAX_WIDTH } from "@shared/constants/constants"; 
+
 const MuxPlayer = dynamic(() => import("@mux/mux-player-react").then((mod) => mod.MuxPlayer));
 
 function calculateHeight(value) {

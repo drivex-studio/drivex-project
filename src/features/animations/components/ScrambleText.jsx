@@ -1,12 +1,13 @@
-import React, { useRef, useContext, useEffect, useCallback, useMemo } from 'react';
-import gsap from 'gsap';
-import { ScrambleGroupContext } from '@providers/ScrambleGroupProvider';
+import React, { useEffect, useRef } from 'react';
+import { gsap, ScrambleTextPlugin } from '@lib/vendor';
+import { useScrambleGroup } from '@animations/hooks/useScrambleGroup';
+import { defaultChars } from '@shared/constants/constants';
 
-export default function ScrambleText({
+export function ScrambleText({
   children,
   className,
   duration = 0.6,
-  chars = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+  chars = defaultChars,
   dualLayer = true,
   triggerOnHover = false,
   revealMode = false,
@@ -18,134 +19,136 @@ export default function ScrambleText({
   multiLine = false
 }) {
   const containerRef = useRef(null);
-  const scrambleSpanRef = useRef(null);
+  const textElementRef = useRef(null);
   const timelineRef = useRef(null);
-  const prevTextRef = useRef("");
-  const hasRevealedRef = useRef(false);
-  
-  
-  const scrambleIdRef = useRef(`scramble-${useMemo(() => Math.random().toString(36).slice(2, 9), [])}`);
+  const internalTextRef = useRef("");
+  const isCompleteRef = useRef(false);
 
-  const themeConfig = theme === "brand" 
+  const instanceIdRef = useRef(`scramble-${Math.random().toString(36).slice(2, 9)}`);
+
+  const themeColors = theme === "brand" 
     ? { firstColorClass: "scramble-white", secondColorClass: "scramble-foreground" } 
     : { firstColorClass: "scramble-brand", secondColorClass: "scramble-foreground" };
 
-  const colorClass1 = firstColorClass ?? themeConfig.firstColorClass;
-  const colorClass2 = secondColorClass ?? themeConfig.secondColorClass;
+  const color1 = firstColorClass ?? themeColors.firstColorClass;
+  const color2 = secondColorClass ?? themeColors.secondColorClass;
 
-  const scrambleGroupContextValue = useContext(ScrambleGroupContext);
+  const scrambleGroup = useScrambleGroup();
 
-  let textString = "";
+  // Normalize children to string
+  let childText;
   if (typeof children === "string") {
-    textString = children;
+    childText = children;
   } else if (typeof children === "number") {
-    textString = String(children);
+    childText = String(children);
+  } else {
+    childText = "";
   }
 
+  // Sync internal text ref with children changes
   useEffect(() => {
-    prevTextRef.current = textString;
-  }, [textString]);
+    internalTextRef.current = childText;
+  }, [childText]);
 
-  const killTimeline = useCallback(() => {
+  const killTimeline = () => {
     if (timelineRef.current) {
       timelineRef.current.kill();
       timelineRef.current = null;
     }
-  }, []);
+  };
 
-  const scrambleAction = useCallback(() => {
-    if (!scrambleSpanRef.current) {
-      return null;
-    }
-    const target = scrambleSpanRef.current;
-    const targetText = prevTextRef.current || textString;
+  const triggerAnimation = () => {
+    if (!textElementRef.current) return null;
     
-    if (!targetText || targetText.length === 0) {
-      return null;
-    }
-    
+    const targetEl = textElementRef.current;
+    const textToScramble = internalTextRef.current || childText;
+
+    if (!textToScramble || textToScramble.length === 0) return null;
+
+    // Respect reduced motion preference
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      target.textContent = targetText;
-      target.className = target.className.replace(/\bscramble-\w+\b/g, "");
-      hasRevealedRef.current = true;
+      targetEl.textContent = textToScramble;
+      targetEl.className = targetEl.className.replace(/\bscramble-\w+\b/g, "");
+      isCompleteRef.current = true;
       onComplete?.();
       return null;
     }
-    
+
     killTimeline();
-    
+
     timelineRef.current = gsap.timeline({
       onComplete: () => {
         timelineRef.current = null;
-        hasRevealedRef.current = true;
+        isCompleteRef.current = true;
         onComplete?.();
       }
     });
 
     if (dualLayer) {
-      const randomText = (function(text, charSet = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$") {
-        let res = "";
-        for (let i = 0; i < text.length; i++) {
-          let char = text[i];
+      const generateScrambledString = (targetString, charset = defaultChars) => {
+        let result = "";
+        for (let t = 0; t < targetString.length; t++) {
+          let char = targetString[t];
           if (char === " " || char === "\n" || char === "\r") {
-            res += char;
+            result += char;
           } else {
-            res += charSet[Math.floor(Math.random() * charSet.length)];
+            result += charset[Math.floor(Math.random() * charset.length)];
           }
         }
-        return res;
-      })(targetText, chars);
+        return result;
+      };
 
-      const nonSpaceCount = targetText.replace(/\s/g, "").length;
-      const charDuration = nonSpaceCount > 0 ? duration / nonSpaceCount : 0;
+      const scrambledText = generateScrambledString(textToScramble, chars);
+      const nonWhitespaceLength = textToScramble.replace(/\s/g, "").length;
+      const stepDuration = nonWhitespaceLength > 0 ? duration / nonWhitespaceLength : 0;
 
-      if (revealMode && !hasRevealedRef.current) {
-        target.textContent = targetText.replace(/[^\s\n\r]/g, " ");
-        timelineRef.current.to(target, {
+      if (revealMode && !isCompleteRef.current) {
+        targetEl.textContent = textToScramble.replace(/[^\s\n\r]/g, " ");
+        timelineRef.current.to(targetEl, {
           duration: duration,
           scrambleText: {
-            text: randomText,
+            text: scrambledText,
             chars: chars,
             speed: 1,
             revealDelay: 0.1,
-            oldClass: colorClass1,
-            newClass: colorClass1
+            oldClass: color1,
+            newClass: color1
           },
           ease: "none"
         });
       } else {
-        timelineRef.current.to(target, {
+        timelineRef.current.to(targetEl, {
           duration: duration,
           scrambleText: {
-            text: randomText,
+            text: scrambledText,
             chars: chars,
             speed: 1,
             revealDelay: 0.1,
-            oldClass: colorClass2,
-            newClass: colorClass1
+            oldClass: color2,
+            newClass: color1
           },
           ease: "none"
         });
       }
-      
-      timelineRef.current.to(target, {
+
+      timelineRef.current.to(targetEl, {
         duration: duration,
         scrambleText: {
-          text: targetText,
+          text: textToScramble,
           chars: chars,
           speed: 1,
           revealDelay: 0.1,
-          oldClass: colorClass1,
-          newClass: colorClass2
+          oldClass: color1,
+          newClass: color2
         },
         ease: "none"
-      }, charDuration);
-      
+      }, stepDuration);
+
     } else {
-      timelineRef.current.to(target, {
+      timelineRef.current.to(targetEl, {
         duration: duration,
         scrambleText: {
-          text: targetText,
+          text: textToScramble,
           chars: chars,
           speed: 1,
           revealDelay: 0.2
@@ -153,78 +156,77 @@ export default function ScrambleText({
         ease: "none"
       });
     }
-    
-    return timelineRef.current;
-  }, [chars, dualLayer, duration, colorClass1, onComplete, revealMode, colorClass2, textString, killTimeline]);
 
-  
+    return timelineRef.current;
+  };
+
+
   useEffect(() => {
-    if (scrambleGroupContextValue) {
-      scrambleGroupContextValue.register(scrambleIdRef.current, scrambleAction);
+    if (scrambleGroup) {
+      scrambleGroup.register(instanceIdRef.current, triggerAnimation);
       return () => {
-        scrambleGroupContextValue.unregister(scrambleIdRef.current);
+        scrambleGroup.unregister(instanceIdRef.current);
       };
     }
-  }, [scrambleGroupContextValue, scrambleAction]);
+  }, [scrambleGroup, triggerAnimation]);
 
-  
+  // Expose the trigger animation function
   useEffect(() => {
-    onReady?.(scrambleAction);
-  }, [onReady, scrambleAction]);
+    onReady?.(triggerAnimation);
+  }, [onReady, triggerAnimation]);
 
-  const handleMouseEnter = useCallback(() => {
+  // Handle trigger on hover
+  const handleMouseEnter = () => {
     if (triggerOnHover) {
-      scrambleAction();
+      triggerAnimation();
     }
-  }, [scrambleAction, triggerOnHover]);
+  };
 
-  
   useEffect(() => {
     return () => {
       killTimeline();
     };
-  }, [killTimeline]);
+  }, []);
 
-  const scrambleTextInitial = revealMode ? textString.replace(/[^\s\n\r]/g, " ") : textString;
-  const whiteSpace = multiLine ? "normal" : "nowrap";
-  const display = multiLine ? "inline" : "inline-block";
+  const initialDisplayText = revealMode ? childText.replace(/[^\s\n\r]/g, " ") : childText;
+  const whiteSpaceValue = multiLine ? "normal" : "nowrap";
+  const displayValue = multiLine ? "inline" : "inline-block";
 
-  const containerStyle = useMemo(() => ({
+  const containerStyle = {
     position: "relative",
-    display,
-    whiteSpace
-  }), [display, whiteSpace]);
+    display: displayValue,
+    whiteSpace: whiteSpaceValue
+  };
 
-  const onMouseEnterProp = triggerOnHover ? handleMouseEnter : undefined;
-
-  const hiddenStyle = useMemo(() => ({
+  const hiddenSpanStyle = {
     visibility: "hidden",
-    whiteSpace
-  }), [whiteSpace]);
+    whiteSpace: whiteSpaceValue
+  };
 
-  const absoluteStyle = useMemo(() => ({
+  const animatedSpanStyle = {
     position: "absolute",
     top: 0,
     left: 0,
-    whiteSpace,
+    whiteSpace: whiteSpaceValue,
     ...(multiLine ? { width: "100%" } : {})
-  }), [multiLine, whiteSpace]);
+  };
 
   return (
-    <span ref={containerRef} 
-      className={className} 
-      style={containerStyle} 
-      onMouseEnter={onMouseEnterProp}
+    <span
+      ref={containerRef}
+      className={className}
+      style={containerStyle}
+      onMouseEnter={triggerOnHover ? handleMouseEnter : undefined}
     >
-      <span className="sr-only">
-        {textString}
+      <span className="sr-only">{childText}</span>
+      <span aria-hidden="true" style={hiddenSpanStyle}>
+        {childText}
       </span>
-      <span aria-hidden="true" style={hiddenStyle}>
-        {textString}
-      </span>
-      <span ref={scrambleSpanRef} aria-hidden="true" style={absoluteStyle}>
-        {scrambleTextInitial}
+      <span ref={textElementRef} aria-hidden="true" style={animatedSpanStyle}>
+        {initialDisplayText}
       </span>
     </span>
   );
 }
+
+export defult ScrambleText;

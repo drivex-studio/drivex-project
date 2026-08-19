@@ -10,7 +10,6 @@ gsap.registerPlugin(
     ScrollTrigger, 
     ScrambleTextPlugin, 
     SplitText, 
-    useGSAP, 
     Flip
  );
 
@@ -20,7 +19,6 @@ export {
     SplitText, 
     ScrambleTextPlugin, 
     Flip, 
-    useGSAP 
  };
 
 export const cx = classVarianceCx;
