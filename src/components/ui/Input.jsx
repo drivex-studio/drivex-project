@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
-
-import { cva, cx } fromfrom '@lib/vendor';
+import { cva, cx } from '@lib/vendor';
 
 export const inputVariants = cva({
   base: [
