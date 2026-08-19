@@ -13,7 +13,7 @@ import { useAsciiDelay } from '@shared/hooks/useAsciiDelay';
 import { usePageEnter } from '@shared/hooks/usePageEnter';
 import { getLenis } from '@providers/LenisProvider';
 import { cx } from '@lib/vendor';
-import { HeaderLogo } from '@components/layout/HeaderLogo';
+import { HeaderLogo } from '@components/utilities/HeaderLogo';
 import { MenuButton } from '@components/ui/MenuButton';
 import { NavigationFlyout } from '@components/layout/NavigationFlyout';
 import { AnimatedButton } from '@features/animations/components/AnimatedButton';

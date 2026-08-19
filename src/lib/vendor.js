@@ -15,11 +15,13 @@ gsap.registerPlugin(
 
 export { 
     gsap, 
+    useGSAP,        
     ScrollTrigger, 
     SplitText, 
     ScrambleTextPlugin, 
-    Flip, 
+    Flip
  };
+
 
 export const cx = classVarianceCx;
 export { cva } from "class-variance-authority";

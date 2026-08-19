@@ -231,4 +231,4 @@ export function ScrambleText({
   );
 }
 
-export defult ScrambleText;
+export default ScrambleText;

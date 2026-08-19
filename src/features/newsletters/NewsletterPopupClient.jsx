@@ -4,10 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { NewsletterForm } from '@features/newsletters/NewsletterForm';
-
 import { trackPopupShown, trackPopupClosed } from '@lib/analytics/utils/posthog';
 
-import { easings } from '../utils/easings';
+import { easings } from '@shared/utils/easings';
 
 const DISMISSED_KEY = "newsletter-popup-dismissed";
 

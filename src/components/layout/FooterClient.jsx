@@ -17,7 +17,7 @@ import { cx } from '@lib/vendor';
 import { GoodFellaWatermark } from "@components/utilities/GoodFellaWatermark";
 
 const AsciiTypewriter = dynamic(
-    () => import("@components/AsciiTypewriter").then((mod) => mod.AsciiTypewriter),
+    () => import("@features/ascii/components/AsciiTypewriter").then((mod) => mod.AsciiTypewriter),
     { ssr: false }
 );
 
