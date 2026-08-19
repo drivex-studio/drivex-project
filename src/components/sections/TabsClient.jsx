@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { ScrollAnimatedHeadline } from "./ScrollAnimatedHeadline.jsx"; // original webpack module ID: 819734
 import { SanityRichText } from "./SanityRichText.jsx"; // original webpack module ID: 770357

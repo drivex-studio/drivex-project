@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useState, use, useEffect } from 'react';
 
 const FooterVisibilityContext = createContext(true);

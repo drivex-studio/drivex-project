@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState, useEffect } from 'react';
 import { gsap, useGSAP, cx } from '@lib/vendor';
 import { usePreloader } from '@providers/PreloaderProvider';

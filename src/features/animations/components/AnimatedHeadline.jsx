@@ -1,3 +1,5 @@
+"use client";
+
 import React, { forwardRef, useRef, useState, useLayoutEffect, useCallback, useImperativeHandle, Fragment } from 'react';
 import { gsap, useGSAP, ScrollTrigger } from '@lib/vendor';
 import useIdleGSAP from '@shared/hooks/useIdleGSAP';
@@ -14,7 +16,7 @@ const typographyClasses = {
   h6: "text-h6"
 };
 
-export const AnimatedHeadline = forwardRef(({
+const AnimatedHeadline = forwardRef(({
   children,
   as: Component = "h1",
   displayAs,
@@ -184,3 +186,5 @@ export const AnimatedHeadline = forwardRef(({
 });
 
 AnimatedHeadline.displayName = "AnimatedHeadline";
+
+export { AnimatedHeadline };

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
 
 const PreloaderContext = createContext(null);

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Fragment, useRef, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { cx } from '@lib/vendor';
 import { useSliderContext } from '@components/ui/Slider';

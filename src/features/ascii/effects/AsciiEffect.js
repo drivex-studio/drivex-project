@@ -1,3 +1,5 @@
+"use client";
+
 import { Effect } from "postprocessing";
 import { Texture, Uniform, Color, CanvasTexture } from "three";
 import {

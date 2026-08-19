@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useCallback, useMemo, useContext } from 'react';
 import { getLenis } from '@providers/LenisProvider';
 

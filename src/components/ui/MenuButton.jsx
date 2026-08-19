@@ -1,3 +1,5 @@
+"use client";
+
 import { cx } from '@lib/vendor';
 
 export function MenuButton({

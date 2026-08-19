@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useGSAP } from '@gsap/react';
 import { usePageTransition } from '@shared/hooks/usePageTransition';

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { Slot, Slottable } from '@radix-ui/react-slot';
 import { cva, cx } from 'class-variance-authority';

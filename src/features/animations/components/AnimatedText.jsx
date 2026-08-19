@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useContext, useLayoutEffect, useEffect } from 'react';
 import { motion, animate } from 'framer-motion';
 import { AnimatedProseContext, stagger } from '@features/animations/components/AnimatedProse'; 

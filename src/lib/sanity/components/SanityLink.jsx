@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { Link } from "@shared/constants/navigation";
-import { cx } from '@lib/vendor';
+import { cva, cx } from '@lib/vendor';
 import { useModal } from '@shared/hooks/useModal';
 
 const icons = {

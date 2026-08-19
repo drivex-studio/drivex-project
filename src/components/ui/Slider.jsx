@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Slot } from '@radix-ui/react-slot';

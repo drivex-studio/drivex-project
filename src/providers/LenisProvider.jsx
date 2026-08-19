@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from 'react';
 import { ReactLenis, useLenis } from 'lenis/react';
 

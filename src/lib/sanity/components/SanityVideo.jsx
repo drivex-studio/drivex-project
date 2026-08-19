@@ -1,3 +1,5 @@
+"use client";
+
 // components/SanityVideo.jsx
 import React, { Suspense, useRef } from "react";
 import dynamic from "next/dynamic";

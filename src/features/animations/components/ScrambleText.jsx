@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 import { gsap, ScrambleTextPlugin } from '@lib/vendor';
 import { useScrambleGroup } from '@animations/hooks/useScrambleGroup';

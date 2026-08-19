@@ -1,6 +1,6 @@
-import { AnimatedButton } from "./AnimatedButton.jsx"; // original webpack module ID: 411602
-import { AnimatedLink } from "./AnimatedLink.jsx"; // original webpack module ID: 553530
-import { SanityLink } from "./SanityLink.jsx"; // original webpack module ID: 895743
+import { AnimatedButton } from "@animations/components/AnimatedButton"; 
+import { AnimatedLink } from '@animations/components/AnimatedLink';
+import { SanityLink } from "@lib/sanity/components/SanityLink"; 
 
 function SanityButton({ button, className }) {
   if (!button.link?.href) return null;

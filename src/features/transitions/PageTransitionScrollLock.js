@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { useLenis } from '@providers/LenisProvider';
 import { usePageTransition } from '@shared/hooks/usePageTransition';

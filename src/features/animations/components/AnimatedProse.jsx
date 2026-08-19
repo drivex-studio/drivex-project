@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useRef, useEffect } from 'react';
 import { motion, animate } from 'framer-motion';
 import { easingDefinitionToFunction } from '@shared/utils/easings';

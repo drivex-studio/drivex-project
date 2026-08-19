@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { motion } from "framer-motion"; // original webpack module ID: 846932
 import { ScrollAnimatedHeadline } from "./ScrollAnimatedHeadline.jsx"; // original webpack module ID: 819734

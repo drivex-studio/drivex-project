@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { useIsoLayoutEffect } from '@shared/hooks/useIsoLayoutEffect';
 import { screens } from '@shared/constants/screens';

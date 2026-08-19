@@ -1,5 +1,5 @@
-import { clsx as cx } from "clsx"; // original webpack module ID: 801335
-import { SanityButton } from "./SanityButton.jsx"; // original webpack module ID: 980233
+import { cx } from '@lib/vendor';
+import { SanityButton } from "@lib/sanity/components/SanityButton"; // original webpack module ID: 980233
 
 const layoutClasses = {
   horizontal: "flex-row flex-wrap items-center",

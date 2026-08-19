@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { cx } from "@lib/vendor"; 

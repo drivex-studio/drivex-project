@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import { composeRefs } from "@radix-ui/react-compose-refs";
 import { cx } from '@lib/vendor';

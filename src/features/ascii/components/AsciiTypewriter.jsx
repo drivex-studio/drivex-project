@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState, useEffect, useCallback } from "react";
 import { cx } from "@lib/vendor";
 import { ASCII_ANIMATION_DURATION } from "@shared/constants/constants";

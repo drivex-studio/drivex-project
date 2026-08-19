@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from 'react';
 import { usePageTransitionContext } from '@providers/PageTransitionProvider';
 
