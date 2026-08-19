@@ -14,14 +14,14 @@ export function NewsletterPopupClient({ data }) {
   const [isMounted, setIsMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  const delaySeconds = data.delaySeconds ?? 5;
+  const delaySeconds = data?.delaySeconds ?? 5;
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   useEffect(() => {
-    if (!isMounted || sessionStorage.getItem(DISMISSED_KEY) === data._id) {
+    if (!data || !isMounted || sessionStorage.getItem(DISMISSED_KEY) === data._id) {
       return;
     }
 
@@ -34,15 +34,15 @@ export function NewsletterPopupClient({ data }) {
     }, 1000 * delaySeconds);
 
     return () => clearTimeout(timeoutId);
-  }, [isMounted, delaySeconds, data._id, data.headline]);
+  }, [isMounted, delaySeconds, data?._id, data?.headline]);
 
   const handleClose = () => {
     setIsVisible(false);
-    trackPopupClosed({ popup_id: data._id });
-    sessionStorage.setItem(DISMISSED_KEY, data._id);
+    trackPopupClosed({ popup_id: data?._id });
+    if (data?._id) sessionStorage.setItem(DISMISSED_KEY, data._id);
   };
 
-  if (!isMounted) return null;
+  if (!isMounted || !data) return null;
 
   const popupState = isVisible
     ? { opacity: 1, y: 0, pointerEvents: "auto" }
