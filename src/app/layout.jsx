@@ -1,4 +1,4 @@
-import { AppProviders } from '@app/providers';
+import AppProviders from '@app/providers';
 import '../styles/app.css';
 import AppLayout from '@components/AppLayout';
 
