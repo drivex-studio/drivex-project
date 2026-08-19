@@ -7,7 +7,9 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body data-transition-phase="idle" data-theme="dark">
         <AppProviders>
-          {children}
+          <AppLayout>
+            {children}
+          </AppLayout>
         </AppProviders>
       </body>
     </html>
