@@ -9,6 +9,7 @@ import { LazyPageTransitionRectangles } from '@features/transitions/LazyPageTran
 import { PageTransitionScrollLock } from '@features/transitions/PageTransitionScrollLock';
 import { getHeaderData } from '@lib/sanity/queries/HeaderData'; 
 import { getFooterData } from '@lib/sanity/queries/FooterData';
+import { SyncBodyTheme } from '@components/theme/SyncBodyTheme'; 
 
 export default async function AppLayout({ children }) {
   const [headerData, footerData] = await Promise.all([
@@ -18,6 +19,7 @@ export default async function AppLayout({ children }) {
 
   return (
     <>
+      <SyncBodyTheme />
       <Preloader />
       <PageTransitionScrollLock />
       <PageTransitionOverlay />

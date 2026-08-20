@@ -10,7 +10,7 @@ export function LogoGood(props) {
     transition: "fill 300ms ease-out"
   };
   
-  const mergedClassName = cx("h-auto w-full", className);
+  const mergedClassName = cx(className); 
 
   return (
     <svg
@@ -38,7 +38,7 @@ export function LogoFella(props) {
     transition: "fill 300ms ease-out"
   };
   
-  const mergedClassName = cx("h-auto w-full", className);
+  const mergedClassName = cx(className); 
 
   return (
     <svg
