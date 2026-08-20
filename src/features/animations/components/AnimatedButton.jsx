@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { Slot, Slottable } from '@radix-ui/react-slot';
-import { cva, cx } from 'class-variance-authority';
+import { cva, cx } from '@lib/vendor';
 import useDualLayerScramble from '@features/animations/hooks/useDualLayerScramble';
 
 const buttonVariants = cva({
@@ -186,16 +186,3 @@ export function AnimatedButton(props) {
     </Comp>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
