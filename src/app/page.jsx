@@ -1,10 +1,12 @@
 import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
 import { HeroSectionContent } from "@components/sections/contents/HeroSectionContent";
+import { CardsSectionClient } from 'components/sections/CardsSectionClient';
 
 export default async function HomePage() {
   const heroData = await getHeroSectionData();
 
   return (
+  <>
     <HeroSectionContent
       className={heroData?.className}
       theme={heroData?.theme}
@@ -15,5 +17,7 @@ export default async function HomePage() {
       ctas={heroData?.ctas}
       trustedBy={heroData?.trustedBy}
     />
+    <CardsSectionContent />
+    </>
   );
 }
