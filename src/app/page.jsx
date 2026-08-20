@@ -1,6 +1,7 @@
 import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
 import { HeroSectionContent } from "@components/sections/contents/HeroSectionContent";
 import { CardsSectionContent } from "@components/sections/contents/CardsSectionContent";
+import { AnimatedListSectionContent } from "@components/sections/contents/AnimatedListSectionContent";
 
 
 export default async function HomePage() {
@@ -19,6 +20,7 @@ export default async function HomePage() {
       trustedBy={heroData?.trustedBy}
     />
     <CardsSectionContent />
+    <AnimatedListSectionContent />
     </>
   );
 }
