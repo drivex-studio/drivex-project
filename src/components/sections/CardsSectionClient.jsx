@@ -154,10 +154,10 @@ export function CardsSectionClient({ cards, fullHeight }) {
                 card.plainText ? (
                   <p className="text-body text-foreground-muted">{card.text}</p>
                 ) : (
-                  <span className="relative flex items-center text-accent text-foreground">
+                  <span className="relative flex items-center overflow-hidden text-accent text-foreground">
                     {!isMobile && (
                       <motion.span
-                        className="absolute left-0 size-12 bg-brand"
+                        className="absolute top-0 bottom-0 left-0 my-auto size-12 bg-brand"
                         initial={false}
                         animate={{ rotate: isHovered ? 0 : -90, scale: isHovered ? 1 : 0 }}
                         transition={{ duration: 0.5, ease: easeBackOut }}
@@ -210,4 +210,3 @@ export function CardsSectionClient({ cards, fullHeight }) {
     </div>
   );
 }
-
