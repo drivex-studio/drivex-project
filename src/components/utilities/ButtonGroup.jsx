@@ -15,7 +15,7 @@ const gapClasses = {
   32: "gap-32",
 };
 
-function ButtonGroup({ buttonGroup, className }) {
+export function ButtonGroup({ buttonGroup, className }) {
   if (!buttonGroup.buttons || buttonGroup.buttons.length === 0) return null;
 
   const layoutClass = layoutClasses[buttonGroup.layout];
@@ -30,4 +30,3 @@ function ButtonGroup({ buttonGroup, className }) {
   );
 }
 
-export { ButtonGroup };

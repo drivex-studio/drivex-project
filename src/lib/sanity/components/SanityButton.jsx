@@ -2,7 +2,7 @@ import { AnimatedButton } from "@animations/components/AnimatedButton";
 import { AnimatedLink } from '@animations/components/AnimatedLink';
 import { SanityLink } from "@lib/sanity/components/SanityLink"; 
 
-function SanityButton({ button, className }) {
+export function SanityButton({ button, className }) {
   if (!button.link?.href) return null;
 
   if (button.variant === "link") {
@@ -25,5 +25,3 @@ function SanityButton({ button, className }) {
     </AnimatedButton>
   );
 }
-
-export { SanityButton };

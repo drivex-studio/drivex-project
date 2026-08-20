@@ -1,21 +1,19 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { AnimatedHeadline } from "../AnimatedHeadline.jsx"; // original webpack module ID: 986246
-import { AnimatedSubtext } from "../AnimatedSubtext.jsx"; // original webpack module ID: 410264
-import { ButtonGroup } from "../ButtonGroup.jsx"; // original webpack module ID: 700504
-import { useAsciiDelay } from "../hooks/useAsciiDelay.js"; // original webpack module ID: 197270
-import { usePageEnter } from "../hooks/usePageEnter.js"; // original webpack module ID: 986950
-import { usePageEnterContext } from "../hooks/usePageEnterContext.js"; // original webpack module ID: 222534
-import { SanityImage } from "../SanityImage.jsx"; // original webpack module ID: 919848
-import { clsx as cx } from "clsx"; // original webpack module ID: 801335
-import { LOGO_HEIGHTS, getLogoSizeVars } from "../getLogoSizeVars.js"; // original webpack module ID: 781854
+import { useGSAP, gsap } from '@lib/vendor';
+import { AnimatedHeadline } from "@animations/components/AnimatedHeadlins"; 
+import { AnimatedSubtext } from "@animations/components/AnimatedSubtext"; 
+import { ButtonGroup } from "@components/utilities/ButtonGroup"; 
+import { useAsciiDelay } from "@shared/hooks/useAsciiDelay"; 
+import { usePageEnter } from "@shared/hooks/usePageEnter"; 
+import { usePageEnterContext } from "@providers/PageEnterProvider"; 
+import { SanityImage } from "@lib/sanity/components/SanityImage"; 
+import { cx } from '@lib/vendor';
+import { LOGO_HEIGHTS, getLogoSizeVars } from "@components/utilities/getLogoSizeVars"; 
 
-gsap.registerPlugin(useGSAP);
 
-function HeroSectionContent({
+export function HeroSectionContent({
   className,
   headline,
   headlineLevel,
@@ -198,5 +196,3 @@ function HeroSectionContent({
     </div>
   );
 }
-
-export { HeroSectionContent };

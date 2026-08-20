@@ -12,4 +12,7 @@ function getLogoSizeVars(variant) {
   };
 }
 
-export { LOGO_HEIGHTS, getLogoSizeVars };
+export{
+  LOGO_HEIGHTS,
+  getLogoSizeVars
+ };
