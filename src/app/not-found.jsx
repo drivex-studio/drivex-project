@@ -22,9 +22,9 @@ export default function NotFoundPage(props = {}) {
   const {
     headline = "Seems like you're lost.",
     description = "Looks like this page was moved or the link is broken.",
-    imageSrc = "/input-ezgif.com-crop.jpg",
+    imageSrc = "/mlbb_xBorg_Skin.heif",
     mobileImageSrc,
-    depthMapSrc = "/input-ezgif.com-crop.jpg",
+    depthMapSrc = "/yuzhong_mlbb.heif",
     color = "#ff6b4a",
     colorDark = "#1a0a2e",
     cellSize = 10,
