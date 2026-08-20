@@ -19,8 +19,6 @@ import { NavigationFlyout } from '@components/layout/NavigationFlyout';
 import { AnimatedButton } from '@features/animations/components/AnimatedButton';
 import { SECTION_THEME_SELECTOR, NAV_SCROLL_THRESHOLDS } from '@shared/constants/NavScroll';
 
-
-
 function useEventListener(eventName, handler, element = window, options) {
   const savedHandler = useRef(handler);
   
@@ -301,14 +299,15 @@ export function HeaderClient({
                 <MenuButton isOpen={isMenuOpen} onClick={toggleMenu} />
               </div>
               {headerCta?.text ? (
-                <AnimatedButton 
-                  size="sm" 
-                  theme="brand" 
-                  className="hidden justify-self-end lg:inline-flex" 
-                  onClick={() => openModal("cal-booking")}
-                >
-                  {headerCta.text}
-                </AnimatedButton>
+                <div className="hidden justify-self-end lg:block">
+                  <AnimatedButton
+                    size="sm"
+                    theme="brand"
+                    onClick={() => openModal("cal-booking")}
+                  >
+                    {headerCta.text}
+                  </AnimatedButton>
+                </div>
               ) : (
                 <div className="hidden lg:block" />
               )}
