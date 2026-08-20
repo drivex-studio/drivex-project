@@ -1,6 +1,7 @@
 import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
 import { HeroSectionContent } from "@components/sections/contents/HeroSectionContent";
-import { CardsSectionClient } from '@components/sections/CardsSectionClient';
+import { CardsSectionContent } from "@components/sections/contents/CardsSectionContent";
+
 
 export default async function HomePage() {
   const heroData = await getHeroSectionData();
