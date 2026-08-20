@@ -2,7 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import { useGSAP, gsap } from '@lib/vendor';
-import { AnimatedHeadline } from "@animations/components/AnimatedHeadlins"; 
+import { AnimatedHeadline } from "@animations/components/AnimatedHeadline"; 
 import { AnimatedSubtext } from "@animations/components/AnimatedSubtext"; 
 import { ButtonGroup } from "@components/utilities/ButtonGroup"; 
 import { useAsciiDelay } from "@shared/hooks/useAsciiDelay"; 
