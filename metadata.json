@@ -1,0 +1,6 @@
+{
+  "name": "Developer Code Checker",
+  "description": "Source-code analysis, AST parsing, broken import resolution, and bug-detection tool for frontend and full-stack projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
