@@ -9,7 +9,7 @@ import { FlipIndicator } from '@animations/components/FlipIndicator';
 import { SanityButton } from '@lib/sanity/components/SanityButton';
 import { SanityMedia } from '@lib/sanity/components/SanityMedia';
 import { SanityImage } from '@lib/sanity/components/SanityImage';
-import { useDualLayerScramble } from '@animations/hooks/useDualLayerScramble';
+import useDualLayerScramble from '@animations/hooks/useDualLayerScramble';
 import { useIdleGSAP } from '@shared/hooks/useIdleGSAP';
 import { cx } from '@lib/vendor';
 

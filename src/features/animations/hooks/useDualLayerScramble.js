@@ -1,6 +1,4 @@
 "use client";
-
-
 import { useRef, useEffect, useCallback } from 'react';
 import { gsap, ScrambleTextPlugin, ScrollTrigger } from '@lib/vendor';
 const DEFAULT_CHARS = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
