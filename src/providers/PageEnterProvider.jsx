@@ -60,16 +60,15 @@ export function PageEnterProvider({ children }) {
     const callbacks = Array.from(callbacksMapRef.current.values());
     callbacks.sort(sortByPriority);
     
-    let maxPriority = -Infinity;
+    let lastPriority = null;
     let staggerIndex = 0;
-    
+
     for (const item of callbacks) {
-      if (item.priority > maxPriority) {
-        maxPriority = item.priority;
-        if (staggerIndex > 0) {
-          staggerIndex += 0.08;
-        }
+      if (lastPriority !== null && item.priority >
+      lastPriority) {
+        staggerIndex += 0.08;
       }
+      lastPriority = item.priority;
       item.trigger(staggerIndex);
     }
     
