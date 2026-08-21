@@ -14,7 +14,7 @@ import { SanityLink } from "@lib/sanity/components/SanityLink";
 import { SanityImage } from "@lib/sanity/components/SanityImage";
 import { getImageSrc } from "@lib/sanity/utils/sanity-imageutils";
 import { cx } from '@lib/vendor';
-import { GoodFellaWatermark } from "@components/utilities/GoodFellaWatermark";
+import { DriveXWatermark } from "@components/utilities/DriveXWatermark";
 
 const AsciiTypewriter = dynamic(
     () => import("@features/ascii/components/AsciiTypewriter").then((mod) => mod.AsciiTypewriter),
@@ -499,7 +499,7 @@ export function FooterClient(props) {
                         <div className="mt-auto flex flex-col">
                             {showWatermark && (
                                 <div className="mt-auto overflow-hidden">
-                                    <GoodFellaWatermark
+                                    <DriveXWatermark
                                         className={cx(
                                             "text-foreground opacity-10",
                                             isAnimating && !prefersReducedMotion && "animate-watermark"
