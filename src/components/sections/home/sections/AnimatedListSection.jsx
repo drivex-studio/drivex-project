@@ -11,10 +11,9 @@ export default async function AnimatedListSection() {
 
   return (
     <section
-      data-theme={data.theme}
+      data-theme="light"
       data-page-builder-section="animatedListSection"
-      className={cx(data.className)}
-    >
+      className="bg-background pt-64 lg:pt-128 pb-64 lg:pb-128">
       <AnimatedListSectionClient
         headline={data.headline}
         label={data.label}
