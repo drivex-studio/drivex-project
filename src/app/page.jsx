@@ -1,8 +1,8 @@
-import HeroSection from “@home/sections/HeroSection”;
-import CardsSection from “@home/sections/CardsSection”;
-import AnimatedListSection from “@components/sections/contents/AnimatedListSectionContent”;
-import FeaturedWorkSection from “@home/sections/FeaturedWorkSection”;
-import IndexedGridSection from “@home/sections/IndexedGridSection”;
+import HeroSection from "@home/sections/HeroSection";
+import CardsSection from "@home/sections/CardsSection";
+import AnimatedListSection from "@components/sections/contents/AnimatedListSectionContent";
+import FeaturedWorkSection from "@home/sections/FeaturedWorkSection";
+import IndexedGridSection from "@home/sections/IndexedGridSection";
 
 export default function HomePage() {
   return (

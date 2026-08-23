@@ -1,4 +1,4 @@
-import FeaturedWorkSectionClient from “@home/FeaturedWorkSectionClient”;
+import FeaturedWorkSectionClient from "@home/FeaturedWorkSectionClient";
 import { getFeaturedWorkSectionData } from "@lib/sanity/queries/FeaturedWorkSectionData";
 
 export default async function FeaturedWorkSection() {

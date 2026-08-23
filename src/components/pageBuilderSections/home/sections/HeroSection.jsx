@@ -1,18 +1,18 @@
 
-import { getHeroSectionData } from “@lib/sanity/queries/HeroSectionData”;
-import { getImageSrc } from “@lib/sanity/utils/sanity-imageutils”;
-import { HeroSectionContent } from “@components/pageBuilderSections/shared/HeroSectionContent”; 
+import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
+import { getImageSrc } from "@lib/sanity/utils/sanity-imageutils";
+import { HeroSectionContent } from "@components/pageBuilderSections/shared/HeroSectionContent"; 
 
-import { HeroAsciiArt } from “@components/sections/hero/HeroAsciiArt”;
-import { HeroScrollPush } from “@components/sections/hero/HeroScrollPush”;
+import { HeroAsciiArt } from "@components/sections/hero/HeroAsciiArt";
+import { HeroScrollPush } from "@components/sections/hero/HeroScrollPush";
 
 const SECTION_CLASS_NAME =
-  “relative min-h-svh overflow-hidden bg-background pt-0 pb-0”;
+  "relative min-h-svh overflow-hidden bg-background pt-0 pb-0";
 const LEFT_COLUMN_CLASS_NAME =
-  “grid-span-12 lg:grid-span-7 pointer-events-none relative z-10 flex grid-rows-[1fr_auto] flex-col items-start justify-between pb-16 lg:pb-32”;
+  "grid-span-12 lg:grid-span-7 pointer-events-none relative z-10 flex grid-rows-[1fr_auto] flex-col items-start justify-between pb-16 lg:pb-32";
 const VISUAL_COLUMN_CLASS_NAME =
-  “lg:grid-span-5 absolute top-[35%] right-0 bottom-0 w-9/10 items-center justify-center overflow-hidden lg:relative lg:inset-auto lg:flex lg:w-auto”;
-const HERO_THEME = “dark”;
+  "lg:grid-span-5 absolute top-[35%] right-0 bottom-0 w-9/10 items-center justify-center overflow-hidden lg:relative lg:inset-auto lg:flex lg:w-auto";
+const HERO_THEME = "dark";
 
 export default async function HeroSection() {
   const data = await getHeroSectionData();
@@ -22,11 +22,11 @@ export default async function HeroSection() {
   return (
     <section
       data-theme={HERO_THEME}
-      data-page-builder-section=“heroSection”
+      data-page-builder-section="heroSection"
       className={SECTION_CLASS_NAME}
     >
-      <HeroScrollPush className=“grid-container relative min-h-svh pt-52”>
-        <div className=“grid-layout min-h-[calc(100svh-52px)]”>
+      <HeroScrollPush className="grid-container relative min-h-svh pt-52">
+        <div className="grid-layout min-h-[calc(100svh-52px)]">
           <HeroSectionContent
             className={LEFT_COLUMN_CLASS_NAME}
             headline={data.headline}
