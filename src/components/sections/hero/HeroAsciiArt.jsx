@@ -10,9 +10,9 @@ import {
   ASCII_EASE,
   ASCII_COLOR_DELAY,
 } from "@shared/constants/constants"; 
-import { useIsTouchDevice } from "shared/hooks/useIsTouchDevice.js"; 
-import { useMousePosition } from "@shared/hooks/useMousePosition.js"; 
-import { usePageEnter } from "@shared/hooks/usePageEnter.js"; 
+import { useIsTouchDevice } from "@shared/hooks/useIsTouchDevice"; 
+import { useMousePosition } from "@shared/hooks/useMousePosition"; 
+import { usePageEnter } from "@shared/hooks/usePageEnter"; 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
