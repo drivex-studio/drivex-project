@@ -19,7 +19,9 @@
       "@lib/*": ["./src/lib/*"],
       "@utils/*": ["./src/shared/utils/*"],
       "@components/*": ["./src/components/*"],
-      "@animations/*": ["./src/features/animations/*"]
+      "@animations/*": ["./src/features/animations/*"],
+      "@pageBuilderSections/*": ["./src/components/pageBuilderSections/*"]
+
       
     }
   },

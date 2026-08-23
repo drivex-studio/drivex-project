@@ -12,7 +12,7 @@ import {
 } from "../constants/ascii.js"; // original webpack module ID: 399179
 import { useIsTouchDevice } from "../hooks/useIsTouchDevice.js"; // original webpack module ID: 537836
 import { useMousePosition } from "../hooks/useMousePosition.js"; // original webpack module ID: 379215
-import { usePageEnter } from "../hooks/usePageEnter.js"; // original webpack module ID: 986950
+import { usePageEnter } from "../hooks/usePageEnter.js"; 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

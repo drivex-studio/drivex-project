@@ -1,7 +1,7 @@
-import FeaturedWorkSectionClient from "@components/sections/FeaturedWorkSectionClient";
+import FeaturedWorkSectionClient from “@pageBuilderSections/home/FeaturedWorkSectionClient”;
 import { getFeaturedWorkSectionData } from "@lib/sanity/queries/FeaturedWorkSectionData";
 
-export async function FeaturedWorkSectionContent() {
+export default async function FeaturedWorkSection() {
   const data = await getFeaturedWorkSectionData();
 
   if (!data?.content?.caseStudies?.length) {

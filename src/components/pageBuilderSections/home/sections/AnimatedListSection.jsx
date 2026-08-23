@@ -1,8 +1,9 @@
 import { cx } from '@lib/vendor';
-import { AnimatedListSectionClient } from "@components/sections/AnimatedListSectionClient";
+import AnimatedListSectionClient from "@pageBuilderSections/home/AnimatedListSectionClient";
 import { getAnimatedListSectionData } from "@lib/sanity/queries/AnimatedListSectionData";
 
-export async function AnimatedListSectionContent() {
+
+export default async function AnimatedListSection() {
   const data = await getAnimatedListSectionData();
 
   if (!data?.items?.length) {

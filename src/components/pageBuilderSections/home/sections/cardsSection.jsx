@@ -1,8 +1,8 @@
 import { cx } from '@lib/vendor';
-import { CardsSectionClient } from "@components/sections/CardsSectionClient";
+import CardsSectionClient from "@pageBuilderSections/home/CardsSectionClient";
 import { getCardsSectionData } from "@lib/sanity/queries/CardsSectionData";
 
-export async function CardsSectionContent() {
+export default async function cardsSection() {
   const data = await getCardsSectionData();
 
   if (!data?.cards?.length) {
