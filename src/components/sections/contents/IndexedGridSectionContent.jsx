@@ -4,7 +4,7 @@ import { getIndexedGridSectionData } from "@lib/sanity/queries/IndexedGridSectio
 export async function IndexedGridSectionContent() {
   const data = await getIndexedGridSectionData();
 
-  if (!data) {
+    if (!data?.items?.length) {
     return null;
   }
 
@@ -12,9 +12,14 @@ export async function IndexedGridSectionContent() {
     <section
       data-theme="light"
       data-page-builder-section="indexedGridSection"
-      className="bg-background pt-64 lg:pt-128 pb-64 lg:pb-128"
-    >
-      <IndexedGridSectionClient section={data} />
+      className="bg-background pt-64 lg:pt-128 pb-64 lg:pb-128">
+      
+      <IndexedGridSectionClient
+        headline={data.headline}
+        text={data.text}
+        label={data.label}
+        items={data.items}
+        variant={data.variant} />
     </section>
   );
 }
