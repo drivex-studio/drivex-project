@@ -53,7 +53,7 @@ function HeroAsciiArt({
 
   useEffect(() => {
     if (shouldRenderAscii) {
-      import("../ascii/AsciiTypewriter.js").then((mod) => {
+      import("@features/ascii/components/AsciiTypewriter").then((mod) => {
         setAsciiTypewriter(() => mod.AsciiTypewriter);
       });
     }
