@@ -4,15 +4,15 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Image } from "../Image.jsx"; // original webpack module ID: 506585
+import { Image } from "@lib/sanity/components/Image"; 
 import {
   ASCII_GSAP_DURATION,
   ASCII_EASE,
   ASCII_COLOR_DELAY,
-} from "../constants/ascii.js"; // original webpack module ID: 399179
-import { useIsTouchDevice } from "../hooks/useIsTouchDevice.js"; // original webpack module ID: 537836
-import { useMousePosition } from "../hooks/useMousePosition.js"; // original webpack module ID: 379215
-import { usePageEnter } from "../hooks/usePageEnter.js"; 
+} from "@shared/constants/constants"; 
+import { useIsTouchDevice } from "shared/hooks/useIsTouchDevice.js"; 
+import { useMousePosition } from "@shared/hooks/useMousePosition.js"; 
+import { usePageEnter } from "@shared/hooks/usePageEnter.js"; 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
