@@ -1,5 +1,5 @@
 import { cx } from '@lib/vendor';
-import AnimatedListSectionClient from "@home/AnimatedListSectionClient";
+import { AnimatedListSectionClient } from "@home/AnimatedListSectionClient";
 import { getAnimatedListSectionData } from "@lib/sanity/queries/AnimatedListSectionData";
 
 export default async function AnimatedListSection() {
