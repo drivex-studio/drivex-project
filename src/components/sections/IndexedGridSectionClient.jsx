@@ -16,7 +16,7 @@ function Divider({ className }) {
 }
 
 
-export function IndexedGridSectionClient({
+export default function IndexedGridSectionClient({
   headline,
   text,
   label,
