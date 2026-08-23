@@ -1,10 +1,11 @@
-
 import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
 import { getImageSrc } from "@lib/sanity/utils/sanity-imageutils";
-import { HeroSectionContent } from "@components/pageBuilderSections/shared/HeroSectionContent"; 
+import { HeroSectionContent } from "@components/pageBuilderSections/shared/HeroSectionContent";
+import { Image } from "@lib/sanity/components/Image";
 
 import { HeroAsciiArt } from "@components/sections/hero/HeroAsciiArt";
 import { HeroScrollPush } from "@components/sections/hero/HeroScrollPush";
+import { AsciiErrorBoundary } from "@features/ascii/components/shared/AsciiErrorBoundary";
 
 const SECTION_CLASS_NAME =
   "relative min-h-svh overflow-hidden bg-background pt-0 pb-0";
@@ -40,25 +41,38 @@ export default async function HeroSection() {
           {/* Visual column — sibling to the left column, not nested inside it */}
           <div className={VISUAL_COLUMN_CLASS_NAME}>
             {data.asciiImage && (
-              <HeroAsciiArt
-                imageSrc={getImageSrc(data.asciiImage)}
-                mobileImageSrc={
-                  data.asciiMobileFallback
-                    ? getImageSrc(data.asciiMobileFallback)
-                    : undefined
+              <AsciiErrorBoundary
+                fallback={
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Image
+                      src={getImageSrc(data.asciiImage)}
+                      priority
+                      alt=""
+                      className="h-full object-contain"
+                    />
+                  </div>
                 }
-                depthMapSrc={
-                  data.asciiDepthMap
-                    ? getImageSrc(data.asciiDepthMap)
-                    : undefined
-                }
-                color={data.asciiColor}
-                colorDark={data.asciiColorDark}
-                cellSize={data.asciiCellSize}
-                parallaxIntensity={data.asciiParallaxIntensity}
-                revealOriginX={data.asciiRevealOriginX}
-                revealOriginY={data.asciiRevealOriginY}
-              />
+              >
+                <HeroAsciiArt
+                  imageSrc={getImageSrc(data.asciiImage)}
+                  mobileImageSrc={
+                    data.asciiMobileFallback
+                      ? getImageSrc(data.asciiMobileFallback)
+                      : undefined
+                  }
+                  depthMapSrc={
+                    data.asciiDepthMap
+                      ? getImageSrc(data.asciiDepthMap)
+                      : undefined
+                  }
+                  color={data.asciiColor}
+                  colorDark={data.asciiColorDark}
+                  cellSize={data.asciiCellSize}
+                  parallaxIntensity={data.asciiParallaxIntensity}
+                  revealOriginX={data.asciiRevealOriginX}
+                  revealOriginY={data.asciiRevealOriginY}
+                />
+              </AsciiErrorBoundary>
             )}
           </div>
         </div>

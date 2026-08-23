@@ -38,11 +38,12 @@ export function getImageDimensions(image, options = {}) {
     };
   };
 
-  const getAspectRatio = (img, opts = {}) => {
-    if (!img.dimensions) throw new Error("Dimensions are missing");
-    const dims = calculateCropDimensions(img, opts);
-    return dims.width && dims.height ? dims.width / dims.height : undefined;
-  };
+const getAspectRatio = (img, opts = {}) => {
+  if (!img?.dimensions) return undefined; 
+  const dims = calculateCropDimensions(img, opts);
+  return dims.width && dims.height ? dims.width / dims.height : undefined;
+};
+
 
   const calculateTarget = (img, opts = {}) => {
     const { crop, aspectRatio: optRatio, height: n, width: l } = opts;

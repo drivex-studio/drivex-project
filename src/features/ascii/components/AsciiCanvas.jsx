@@ -16,9 +16,17 @@ function preventContextLost(event) {
   event.preventDefault();
 }
 
-function onCanvasCreated({ gl }) {
-  gl.domElement.addEventListener("webglcontextlost", preventContextLost);
+function onCanvasCreated({ gl, invalidate }) {
+  gl.domElement.addEventListener("webglcontextlost", (event) => {
+    event.preventDefault();
+    console.warn("[ASCII] WebGL context lost");
+  });
+  gl.domElement.addEventListener("webglcontextrestored", () => {
+    console.warn("[ASCII] WebGL context restored");
+    invalidate();
+  });
 }
+
 
 export function AsciiCanvas({
   imageSrc,
