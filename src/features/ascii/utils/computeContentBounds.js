@@ -2,15 +2,7 @@
 
 import { resolveImageSrc } from "@features/ascii/utils/imageUtils";
 
-/**
- * Computes the maximum normalised distance from a reveal origin to any
- * non-transparent pixel in the image. Used to scale the typewriter progress
- * so the animation ends when the last visible character appears.
- *
- * @param {string} imageSrc
- * @param {{ x: number, y: number }} origin
- * @returns {Promise<number>} normalised max distance in [0, 1]
- */
+
 export async function computeContentBounds(
   imageSrc,
   origin = { x: 0.5, y: 0.5 }
