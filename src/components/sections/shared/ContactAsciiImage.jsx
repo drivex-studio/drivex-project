@@ -2,14 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { useIsTouchDevice } from "../hooks/useIsTouchDevice.js"; // original webpack module ID: 537836
-import { useMousePosition } from "../hooks/useMousePosition.js"; // original webpack module ID: 379215
-import { usePageEnter } from "../hooks/usePageEnter.js"; // original webpack module ID: 986950
+import { useIsTouchDevice } from "../hooks/useIsTouchDevice.js";
+import { useMousePosition } from "../hooks/useMousePosition.js";
+import { usePageEnter } from "../hooks/usePageEnter.js";
 import {
   ASCII_GSAP_DURATION,
   ASCII_EASE,
   ASCII_COLOR_DELAY,
-} from "../constants/ascii.js"; // original webpack module ID: 399179
+} from "../constants/ascii.js";
 
 function ContactAsciiImage({
   imageSrc,
@@ -54,7 +54,7 @@ function ContactAsciiImage({
 
   useEffect(() => {
     if (shouldRenderAscii) {
-      // dynamic import of AsciiTypewriter (module 977030)
+
       import(/* webpackChunkName: "ascii" */ "../ascii/AsciiTypewriter.js").then(
         (mod) => {
           setAsciiTypewriter(() => mod.AsciiTypewriter);

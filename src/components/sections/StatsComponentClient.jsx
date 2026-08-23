@@ -1,5 +1,5 @@
 import { createRef } from "react";
-import { RollerNumber } from "./RollerNumber.jsx"; // original webpack module ID: 879179
+import { RollerNumber } from "./RollerNumber.jsx"; 
 
 function parseNumber(value) {
   const match = value.trim().match(/^([€$£¥₹]?[-+]?)(\d+)([MBKx%+]*)$/i);

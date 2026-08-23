@@ -3,11 +3,11 @@
 import { useMemo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { usePageEnter } from "../hooks/usePageEnter.js"; // original webpack module ID: 986950
-import { usePageEnterContext } from "../hooks/usePageEnterContext.js"; // original webpack module ID: 222534
-import { SanityImage } from "../SanityImage.jsx"; // original webpack module ID: 919848
-import { getImageSrc } from "../utils/image.js"; // original webpack module ID: 574660
-import { LOGO_HEIGHTS, getLogoSizeVars } from "../getLogoSizeVars.js"; // original webpack module ID: 781854
+import { usePageEnter } from "../hooks/usePageEnter.js";
+import { usePageEnterContext } from "../hooks/usePageEnterContext.js";
+import { SanityImage } from "../SanityImage.jsx";
+import { getImageSrc } from "../utils/image.js";
+import { LOGO_HEIGHTS, getLogoSizeVars } from "../getLogoSizeVars.js";
 
 gsap.registerPlugin(useGSAP);
 

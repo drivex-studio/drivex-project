@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ScrollAnimatedHeadline } from "./ScrollAnimatedHeadline.jsx"; // original webpack module ID: 819734
-import { SanityRichText } from "./SanityRichText.jsx"; // original webpack module ID: 770357
-import { clsx as cx } from "clsx"; // original webpack module ID: 801335
+import { ScrollAnimatedHeadline } from "./ScrollAnimatedHeadline.jsx";
+import { SanityRichText } from "./SanityRichText.jsx";
+import { clsx as cx } from "clsx";
 
 function TabsClient({ items, initialActiveKey, sectionHeadline }) {
   const firstKey = items[0]?._key ?? null;

@@ -3,11 +3,11 @@
 import { useMemo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { usePageEnter } from "../hooks/usePageEnter.js"; // original webpack module ID: 986950
-import { usePageEnterContext } from "../hooks/usePageEnterContext.js"; // original webpack module ID: 222534
-import { AnimatedHeadline } from "../AnimatedHeadline.jsx"; // original webpack module ID: 986246
-import { AnimatedSubtext } from "../AnimatedSubtext.jsx"; // original webpack module ID: 410264
-import { clsx as cx } from "clsx"; // original webpack module ID: 801335
+import { usePageEnter } from "../hooks/usePageEnter.js";
+import { usePageEnterContext } from "../hooks/usePageEnterContext.js";
+import { AnimatedHeadline } from "../AnimatedHeadline.jsx";
+import { AnimatedSubtext } from "../AnimatedSubtext.jsx";
+import { clsx as cx } from "clsx";
 
 gsap.registerPlugin(useGSAP);
 
