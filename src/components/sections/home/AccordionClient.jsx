@@ -1,14 +1,11 @@
+"use client";
+
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import gsap from 'gsap';
-import { SplitText } from 'gsap/SplitText';
+import { gsap, SplitText } from '@lib/vendor';
 import { ScrambleGroup } from '@shared/contexts/ScrambleContext';
 import { ScrambleText } from '@features/animations/components/ScrambleText';
 import { SanityRichText } from '@lib/sanity/components/SanityRichText';
-
 import { useBreakpoint } from '@shared/hooks/useIsTouchDevice';
-
-gsap.registerPlugin(SplitText);
-
 
 function AccordionItem({
   headline,
@@ -71,7 +68,6 @@ function AccordionItem({
     }
   }, []);
 
-
   useEffect(() => {
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && containerRef.current) {
       gsap.set(containerRef.current, { height: 0, overflow: "hidden", force3D: true });
@@ -91,7 +87,6 @@ function AccordionItem({
       splitTextRef.current?.revert();
     };
   }, [duration, ease]);
-
 
   useEffect(() => {
     if (!timelineRef.current || isOpen === prevIsOpenRef.current) return;
@@ -136,7 +131,7 @@ function AccordionItem({
           )}
         </span>
         
-        <svg ref={iconRef} className="h-16 w-16 shrink-0" viewBox="0 0 16 16" fill="none" xmlns="http:
+        <svg ref={iconRef} className="h-16 w-16 shrink-0" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path ref={iconLineRef} d="M8 1V15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
           <path d="M1 8H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
         </svg>
@@ -197,3 +192,4 @@ export default function AccordionClient({
     </ScrambleGroup>
   );
 }
+
