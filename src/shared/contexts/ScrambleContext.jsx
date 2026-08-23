@@ -1,11 +1,6 @@
 import React, { createContext, useContext, useRef, useState, useCallback, useMemo } from 'react';
-import gsap from 'gsap';
-
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { gsap, ScrollTrigger } from '@lib/vendor';
 import { useIdleGSAP } from '@shared/hooks/useIdleGSAP';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ScrambleContext = createContext(null);
 

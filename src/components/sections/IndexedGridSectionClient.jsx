@@ -6,7 +6,7 @@ import { cx } from '@lib/vendor';
 import { easings } from '@shared/utils/easings';
 import { ScrollAnimatedHeadline } from '@animations/components/ScrollAnimatedHeadline';
 import { ScrambleText } from '@animations/components/ScrambleText';
-import { ScrambleGroup } from '@animations/hooks/useScrambleGroup';
+import { ScrambleGroup } from '@shared/contexts/ScrambleContext';
 
 const { power3Out, backOut } = easings;
 
