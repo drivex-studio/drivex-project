@@ -34,7 +34,7 @@ function RenderImageItem(item) {
 }
 
 
-export function AnimatedListSectionClient({
+export default function AnimatedListSectionClient({
   headline,
   label,
   text,

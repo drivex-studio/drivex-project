@@ -1,5 +1,5 @@
 import { cx } from '@lib/vendor';
-import { CardsSectionClient } from "@home/CardsSectionClient";
+import CardsSectionClient from "@home/CardsSectionClient";
 import { getCardsSectionData } from "@lib/sanity/queries/CardsSectionData";
 
 export default async function CardsSection() {
@@ -10,11 +10,10 @@ export default async function CardsSection() {
   }
 
   return (
-    <section
-      data-theme={data.theme}
-      data-page-builder-section="cardsSection"
-      className={cx(data.className)}
-    >
+  <section
+    data-theme={data.theme}
+    data-page-builder-section="cardsSection"
+    className="bg-background pt-64 lg:pt-128 pb-64 lg:pb-12">
       <div className="grid-container">
         <div className="grid-layout">
           <div className="grid-span-12">

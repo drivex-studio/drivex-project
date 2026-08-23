@@ -9,11 +9,10 @@ export default async function FeaturedWorkSection() {
   }
 
   return (
-    <section
-      data-theme={data.theme}
-      data-page-builder-section="featuredWorkSection"
-      className={data.className}
-    >
+<section
+  data-theme="dark"
+  data-page-builder-section="featuredWorkSection"
+  className="bg-background pt-64 lg:pt-128 pb-64 lg:pb-128">
       <FeaturedWorkSectionClient section={data} />
     </section>
   );
