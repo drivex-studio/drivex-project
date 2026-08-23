@@ -48,7 +48,7 @@ function handleScrollRefresh() {
   ScrollTrigger.refresh();
 }
 
-export function CardsSectionClient({ cards, fullHeight }) {
+export default function CardsSectionClient({ cards, fullHeight }) {
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
 
