@@ -21,9 +21,7 @@
       "@components/*": ["./src/components/*"],
       "@animations/*": ["./src/features/animations/*"],
       "@home/*": ["./src/components/sections/home/*"]
-
-      
-    }
+      }
   },
   "include": [
     "src/**/*",
