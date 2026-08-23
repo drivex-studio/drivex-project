@@ -1,30 +1,17 @@
-import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
-import { HeroSectionContent } from "@components/sections/contents/HeroSectionContent";
-import { CardsSectionContent } from "@components/sections/contents/CardsSectionContent";
-import { AnimatedListSectionContent } from "@components/sections/contents/AnimatedListSectionContent";
-import { FeaturedWorkSectionContent } from "@components/sections/contents/FeaturedWorkSectionContent";
-import { IndexedGridSectionContent } from "@components/sections/contents/IndexedGridSectionContent";
+import HeroSection from “@home/sections/HeroSection”;
+import CardsSection from “@home/sections/CardsSection”;
+import AnimatedListSection from “@components/sections/contents/AnimatedListSectionContent”;
+import FeaturedWorkSection from “@home/sections/FeaturedWorkSection”;
+import IndexedGridSection from “@home/sections/IndexedGridSection”;
 
-
-export default async function HomePage() {
-  const heroData = await getHeroSectionData();
-
+export default function HomePage() {
   return (
-  <>
-    <HeroSectionContent
-      className={heroData?.className}
-      theme={heroData?.theme}
-      headline={heroData?.headline}
-      headlineLevel={heroData?.headlineLevel}
-      headlineDisplay={heroData?.headlineDisplay}
-      subtext={heroData?.subtext}
-      ctas={heroData?.ctas}
-      trustedBy={heroData?.trustedBy}
-    />
-    <CardsSectionContent />
-    <AnimatedListSectionContent />
-    <FeaturedWorkSectionContent />
-    <IndexedGridSectionContent />
+    <>
+      <HeroSection />
+      <CardsSection />
+      <AnimatedListSection />
+      <FeaturedWorkSection />
+      <IndexedGridSection />
     </>
   );
 }

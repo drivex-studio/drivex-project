@@ -20,7 +20,7 @@
       "@utils/*": ["./src/shared/utils/*"],
       "@components/*": ["./src/components/*"],
       "@animations/*": ["./src/features/animations/*"],
-      "@pageBuilderSections/*": ["./src/components/pageBuilderSections/*"]
+      "@home/*": ["./src/components/pageBuilderSections/home/*"]
 
       
     }

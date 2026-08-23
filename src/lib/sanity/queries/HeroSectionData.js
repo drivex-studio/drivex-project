@@ -1,15 +1,15 @@
-import { sanityClient } from "@lib/sanity/client";
+import { sanityClient } from “@lib/sanity/client”;
 
 const imageProjection = `{
-  "_id": asset->_id,
-  "_rev": asset->_rev,
-  "altText": coalesce(alt, asset->altText),
-  "crop": crop,
-  "description": asset->description,
-  "dimensions": asset->metadata.dimensions,
-  "hotspot": hotspot,
-  "lqip": asset->metadata.lqip,
-  "title": asset->title
+  “_id”: asset->_id,
+  “_rev”: asset->_rev,
+  “altText”: coalesce(alt, asset->altText),
+  “crop”: crop,
+  “description”: asset->description,
+  “dimensions”: asset->metadata.dimensions,
+  “hotspot”: hotspot,
+  “lqip”: asset->metadata.lqip,
+  “title”: asset->title
 }`;
 
 const linkProjection = `{
@@ -21,15 +21,12 @@ const linkProjection = `{
   type
 }`;
 
-const HERO_QUERY = `*[_type == "heroSection"][0]{
-  theme,
-  pageBuilderSection,
-  className,
-  "headline": content.headline,
-  "headlineLevel": content.headlineLevel,
-  "headlineDisplay": content.headlineDisplay,
-  "subtext": content.subtext,
-  "ctas": content.ctas{
+const HERO_QUERY = `*[_type == “heroSection”][0]{
+  “headline”: content.headline,
+  “headlineLevel”: content.headlineLevel,
+  “headlineDisplay”: content.headlineDisplay,
+  “subtext”: content.subtext,
+  “ctas”: content.ctas{
     layout,
     gap,
     buttons[]{
@@ -37,38 +34,38 @@ const HERO_QUERY = `*[_type == "heroSection"][0]{
       variant,
       theme,
       size,
-      "link": link${linkProjection}
+      “link”: link${linkProjection}
     }
   },
-  "trustedBy": content.trustedBy{
+  “trustedBy”: content.trustedBy{
     title,
     items[]{
       _key,
       _type,
-      _type == "image" => {
+      _type == “image” => {
         alt,
         variant,
-        "image": image${imageProjection}
+        “image”: image${imageProjection}
       },
-      _type == "svgItem" => {
+      _type == “svgItem” => {
         alt,
         variant,
         svgCode
       },
-      _type == "textItem" => {
+      _type == “textItem” => {
         text
       }
     }
   },
-  "asciiImage": content.asciiImage${imageProjection},
-  "asciiDepthMap": content.asciiDepthMap${imageProjection},
-  "asciiColor": content.asciiColor,
-  "asciiColorDark": content.asciiColorDark,
-  "asciiCellSize": content.asciiCellSize,
-  "asciiParallaxIntensity": content.asciiParallaxIntensity,
-  "asciiRevealOriginX": content.asciiRevealOriginX,
-  "asciiRevealOriginY": content.asciiRevealOriginY,
-  "asciiMobileFallback": content.asciiMobileFallback${imageProjection}
+  “asciiImage”: content.asciiImage${imageProjection},
+  “asciiDepthMap”: content.asciiDepthMap${imageProjection},
+  “asciiColor”: content.asciiColor,
+  “asciiColorDark”: content.asciiColorDark,
+  “asciiCellSize”: content.asciiCellSize,
+  “asciiParallaxIntensity”: content.asciiParallaxIntensity,
+  “asciiRevealOriginX”: content.asciiRevealOriginX,
+  “asciiRevealOriginY”: content.asciiRevealOriginY,
+  “asciiMobileFallback”: content.asciiMobileFallback${imageProjection}
 }`;
 
 export async function getHeroSectionData() {

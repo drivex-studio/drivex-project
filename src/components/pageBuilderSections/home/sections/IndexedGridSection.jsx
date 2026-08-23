@@ -1,7 +1,7 @@
-import IndexedGridSectionClient from "@pageBuilderSections/home/IndexedGridSectionClient";
+import IndexedGridSectionClient from "@home/IndexedGridSectionClient";
 import { getIndexedGridSectionData } from "@lib/sanity/queries/IndexedGridSectionData";
 
-export default async function indexedGridSection() {
+export default async function IndexedGridSection() {
   const data = await getIndexedGridSectionData();
 
     if (!data?.items?.length) {

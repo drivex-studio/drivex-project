@@ -1,7 +1,8 @@
 
 import { getHeroSectionData } from “@lib/sanity/queries/HeroSectionData”;
 import { getImageSrc } from “@lib/sanity/utils/sanity-imageutils”;
-import { HeroSectionContent } from “@components/sections/contents/HeroSectionContent”; 
+import { HeroSectionContent } from “@components/pageBuilderSections/shared/HeroSectionContent”; 
+
 import { HeroAsciiArt } from “@components/sections/hero/HeroAsciiArt”;
 import { HeroScrollPush } from “@components/sections/hero/HeroScrollPush”;
 
@@ -13,7 +14,7 @@ const VISUAL_COLUMN_CLASS_NAME =
   “lg:grid-span-5 absolute top-[35%] right-0 bottom-0 w-9/10 items-center justify-center overflow-hidden lg:relative lg:inset-auto lg:flex lg:w-auto”;
 const HERO_THEME = “dark”;
 
-export async function HeroSection() {
+export default async function HeroSection() {
   const data = await getHeroSectionData();
 
   if (!data) return null;
