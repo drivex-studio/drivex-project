@@ -1,6 +1,6 @@
 import { getHeroSectionData } from "@lib/sanity/queries/HeroSectionData";
 import { getImageSrc } from "@lib/sanity/utils/sanity-imageutils";
-import { HeroSectionContent } from "@components/sections/HeroSectionContent";
+import { HeroSectionContent } from "@components/sections/shared/HeroSectionContent";
 import { Image } from "@lib/sanity/components/Image";
 
 import { HeroAsciiArt } from "@components/sections/hero/HeroAsciiArt";
