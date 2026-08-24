@@ -12,7 +12,7 @@ import { SanityMedia } from "@lib/sanity/components/SanityMedia";
 import { getImageSrc, getImageSrcSet } from "@lib/sanity/utils/sanity-imageutils"; 
 import { DriveXWatermark } from "@/src/components/utilities/DriveXWatermark"; 
 import { cx } from '@lib/vendor';
-import { HIGH_RES_SOURCE_WIDTHS } from "@shared/constants/constants/"; 
+import { HIGH_RES_SOURCE_WIDTHS } from "@shared/constants/constants"; 
 
 
 function ScrollText({ text, className }) {
