@@ -1,4 +1,4 @@
-import { getAboutHeroSectionData } from "@lib/sanity/queries/aboutPage/AboutHeroSectionData";
+import { getAboutHeroSectionData } from "@lib/sanity/queries/AboutHeroSectionData";
 import HeroParallax from "@components/sections/hero/HeroParallax";
 
 const SECTION_CLASS_NAME = "relative overflow-hidden bg-background pt-0 pb-0";
@@ -7,7 +7,7 @@ const HERO_THEME = "dark";
 export default async function AboutHeroSection() {
   const data = await getAboutHeroSectionData();
 
-  if (!data) return null;
+  if (!data || !data.media) return null;
 
   return (
     <section
