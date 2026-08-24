@@ -32,20 +32,19 @@ const mediaProjection = `{
   videoOptions
 }`;
 
-
 const CONTENT_BLOCK_QUERY = `*[_type == "contentBlockSection" && _id == $id][0]{
   theme,
   selector,
   className,
   layout,
   "headline": content.headline{ level, text },
-  headlineDisplay: content.headlineDisplay,
+  "headlineDisplay": content.headlineDisplay,
   "secondaryHeadline": content.secondaryHeadline{ level, text },
   "media": content.media${mediaProjection},
   "text": content.text,
   "primaryCta": content.ctas.primary,
   "secondaryCta": content.ctas.secondary,
-  footnote: content.footnote
+  "footnote": content.footnote
 }`;
 
 export async function getContentBlockSectionData(id) {
