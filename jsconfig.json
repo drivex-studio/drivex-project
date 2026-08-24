@@ -20,7 +20,8 @@
       "@utils/*": ["./src/shared/utils/*"],
       "@components/*": ["./src/components/*"],
       "@animations/*": ["./src/features/animations/*"],
-      "@home/*": ["./src/components/sections/home/*"]
+      "@home/*": ["./src/components/sections/home/*"],
+      "@about/*": ["./src/components/sections/about/*"]
       }
   },
   "include": [

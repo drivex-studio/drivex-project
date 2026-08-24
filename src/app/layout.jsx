@@ -24,7 +24,7 @@ export const metadata = {
     siteName: "Drive X Store",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Drive X Store",
