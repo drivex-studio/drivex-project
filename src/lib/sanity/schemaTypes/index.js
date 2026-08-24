@@ -16,6 +16,7 @@ import cardsSection from "./documents/cardsSection";
 import featuredWorkSection from "./documents/featuredWorkSection";
 import animatedListSection from "./documents/animatedListSection";
 import indexedGridSection from "./documents/indexedGridSection";
+import contentBlockSection from "./documents/contentBlockSection";
 
 export const schemaTypes = [
   // objects
@@ -37,4 +38,5 @@ export const schemaTypes = [
   featuredWorkSection,
   animatedListSection,
   indexedGridSection,
+  contentBlockSection,
 ];

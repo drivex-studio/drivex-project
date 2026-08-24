@@ -4,6 +4,7 @@ import AnimatedListSection from "@home/sections/AnimatedListSection";
 import FeaturedWorkSection from "@home/sections/FeaturedWorkSection";
 import IndexedGridSection from "@home/sections/IndexedGridSection";
 import AccordionSection from "@home/sections/AccordionSection";
+import ContentBlockSection from "@home/sections/ContentBlockSection";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,9 @@ export default function HomePage() {
       <FeaturedWorkSection />
       <IndexedGridSection />
       <AccordionSection />
+      <ContentBlockSection 
+      id="contentBlockSection-contact-cta" 
+      />
     </>
   );
 }
