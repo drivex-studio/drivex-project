@@ -32,6 +32,10 @@ const mediaProjection = `{
   videoOptions
 }`;
 
+// This document type is reused many times across pages (home CTA, about
+// page blocks, etc.), so unlike the singleton sections (cardsSection,
+// heroSection) it can't be looked up by _type alone — each instance is
+// selected by its own Sanity document _id.
 const CONTENT_BLOCK_QUERY = `*[_type == "contentBlockSection" && _id == $id][0]{
   theme,
   selector,
@@ -42,8 +46,8 @@ const CONTENT_BLOCK_QUERY = `*[_type == "contentBlockSection" && _id == $id][0]{
   "secondaryHeadline": content.secondaryHeadline{ level, text },
   "media": content.media${mediaProjection},
   "text": content.text,
-  "primaryCta": content.ctas.primary,
-  "secondaryCta": content.ctas.secondary,
+  "primaryCta": content.ctas.primary{ variant, theme, size, link },
+  "secondaryCta": content.ctas.secondary{ variant, theme, size, link },
   "footnote": content.footnote
 }`;
 

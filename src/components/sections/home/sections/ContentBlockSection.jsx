@@ -1,10 +1,9 @@
+
 import { cx } from '@lib/vendor';
 import { AnimatedHeadline } from "@features/animations/components/AnimatedHeadline";
-import { AnimatedLink } from "@features/animations/components/AnimatedLink";
-import { AnimatedButton } from "@features/animations/components/AnimatedButton";
 import { SanityMedia } from "@lib/sanity/components/SanityMedia";
 import { SanityRichText } from "@lib/sanity/components/SanityRichText";
-import { SanityLink } from "@lib/sanity/components/SanityLink";
+import { SanityButton } from "@lib/sanity/components/SanityButton";
 import { getContentBlockSectionData } from "@lib/sanity/queries/ContentBlockSectionData";
 
 
@@ -69,21 +68,16 @@ export default async function ContentBlockSection({ id }) {
           </div>
         )}
 
-        {(primaryCta || secondaryCta) && (
+        {(primaryCta?.link?.href || secondaryCta?.link?.modalId || secondaryCta?.link?.href) && (
           <div>
             <div className="flex items-start flex-col gap-16">
-              {primaryCta && (
-                <AnimatedLink asChild>
-                  <SanityLink
-                    link={primaryCta}
-                    className="group relative w-fit cursor-pointer inline-block outline-none focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  />
-                </AnimatedLink>
+              {primaryCta?.link?.href && (
+                <SanityButton button={{ ...primaryCta, variant: "link" }} />
               )}
-              {secondaryCta && (
-                <AnimatedButton asChild size="sm" theme="light">
-                  <SanityLink link={secondaryCta} animated size="sm" theme="light" />
-                </AnimatedButton>
+              {(secondaryCta?.link?.modalId || secondaryCta?.link?.href) && (
+                <SanityButton
+                  button={{ size: "sm", theme: "light", ...secondaryCta }}
+                />
               )}
             </div>
           </div>

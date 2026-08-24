@@ -12,8 +12,9 @@ export default {
       title: "Content",
       type: "object",
       fields: [
-        { name: "headline", title: "Headline", type: "headline" },
+        { name: "headline", title: "Headline (media column)", type: "headline" },
         { name: "headlineDisplay", title: "Headline display", type: "string" },
+        { name: "secondaryHeadline", title: "Headline (text column)", type: "headline" },
         { name: "media", title: "Media", type: "media" },
         { name: "text", title: "Rich text", type: "richText" },
         {
@@ -21,8 +22,8 @@ export default {
           title: "CTAs",
           type: "object",
           fields: [
-            { name: "primary", title: "Primary link", type: "linkField" },
-            { name: "secondary", title: "Secondary link (modal/button)", type: "linkField" },
+            { name: "primary", title: "Primary button", type: "ctaButton" },
+            { name: "secondary", title: "Secondary button", type: "ctaButton" },
           ],
         },
         { name: "footnote", title: "Footnote", type: "string" },
