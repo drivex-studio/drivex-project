@@ -42,13 +42,13 @@ const linkProjection = `{
 }`;
 
 const ABOUT_HERO_QUERY = `*[_type == "about-hero"][0]{
-  "media": content.media${mediaProjection},
-  "mobileImage": content.mobileImage${imageProjection},
-  "headline": content.headline,
-  "headlineLevel": content.headlineLevel,
-  "headlineDisplay": content.headlineDisplay,
-  "subtext": content.subtext,
-  "ctas": content.ctas{
+  "media": media${mediaProjection},
+  "mobileImage": mobileImage${imageProjection},
+  "headline": headline,
+  "headlineLevel": headlineLevel,
+  "headlineDisplay": headlineDisplay,
+  "subtext": subtext,
+  "ctas": ctas{
     layout,
     gap,
     buttons[]{
@@ -59,9 +59,10 @@ const ABOUT_HERO_QUERY = `*[_type == "about-hero"][0]{
       "link": link${linkProjection}
     }
   },
-  "scrollText": content.scrollText,
-  "useWatermark": content.useWatermark
+  "scrollText": scrollText,
+  "useWatermark": useWatermark
 }`;
+
 
 export async function getAboutHeroSectionData() {
   return sanityClient.fetch(ABOUT_HERO_QUERY, {}, { next: { revalidate: 60 } });
