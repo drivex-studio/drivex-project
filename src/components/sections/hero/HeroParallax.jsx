@@ -1,21 +1,16 @@
 "use client";
 
-
-
 import { useEffect, useMemo, useRef } from "react";
 import { gsap, useGSAP, ScrollTrigger } from "@lib/vendor";
 import { usePageEnter } from "@shared/hooks/usePageEnter.js"; 
 import { usePageEnterContext } from '@providers/PageEnterProvider';
 import { AnimatedHeadline } from "@features/animations/components/AnimatedHeadline"; 
-import { AnimatedSubtext } from "./components/AnimatedSubtext.jsx"; 
-import { ButtonGroup } from "./components/ButtonGroup.jsx"; 
-
+import { AnimatedSubtext } from "@animations/components/AnimatedSubtext"; 
+import { ButtonGroup } from "@components/utilities/ButtonGroup"; 
 import { Image } from "@lib/sanity/components/Image"; 
 import { SanityMedia } from "@lib/sanity/components/SanityMedia"; 
 import { getImageSrc, getImageSrcSet } from "@lib/sanity/utils/sanity-imageutils"; 
-
 import { DriveXWatermark } from "@/src/components/utilities/DriveXWatermark"; 
-
 import { cx } from '@lib/vendor';
 import { HIGH_RES_SOURCE_WIDTHS } from "@shared/constants/constants/"; 
 

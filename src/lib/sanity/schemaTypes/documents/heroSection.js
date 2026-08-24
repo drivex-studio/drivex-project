@@ -14,6 +14,10 @@ export default {
         { name: "headlineLevel", title: "Headline level", type: "string" },
         { name: "headlineDisplay", title: "Headline display", type: "string" },
         { name: "subtext", title: "Subtext", type: "text" },
+        { name: "media", title: "Media (desktop)", type: "media" },
+        { name: "mobileImage", title: "Mobile image", type: "customImage" },
+        { name: "scrollText", title: "Scroll text", type: "string" },
+        { name: "useWatermark", title: "Use watermark", type: "boolean" },
         {
           name: "ctas",
           title: "CTAs",
