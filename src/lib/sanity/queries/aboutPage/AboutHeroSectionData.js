@@ -41,7 +41,7 @@ const linkProjection = `{
   type
 }`;
 
-const ABOUT_HERO_QUERY = `*[_type == "about-hero"][0]{
+const ABOUT_HERO_QUERY = `*[_type == "aboutHero"][0]{
   "media": media${mediaProjection},
   "mobileImage": mobileImage${imageProjection},
   "headline": headline,
